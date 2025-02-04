@@ -22,25 +22,31 @@ class OCRApp:
         tk.Label(self.root, text="Select Input File:").grid(row=1, column=0, padx=10, pady=10)
         self.input_button = tk.Button(self.root, text="Browse", command=self.select_input_file)
         self.input_button.grid(row=1, column=1, padx=10, pady=10)
+        
+        self.input_file_label = tk.Label(self.root, text="No file selected")
+        self.input_file_label.grid(row=1, column=2, padx=10, pady=10)
 
         # Output File Selection
         tk.Label(self.root, text="Select Output File:").grid(row=2, column=0, padx=10, pady=10)
         self.output_button = tk.Button(self.root, text="Browse", command=self.select_output_file)
         self.output_button.grid(row=2, column=1, padx=10, pady=10)
 
+        self.output_file_label = tk.Label(self.root, text="No file selected")
+        self.output_file_label.grid(row=2, column=2, padx=10, pady=10)
+
         # Start Button to Process
         self.start_button = tk.Button(self.root, text="Start OCR", command=self.start_ocr_process)
-        self.start_button.grid(row=3, column=0, columnspan=2, pady=20)
+        self.start_button.grid(row=3, column=0, columnspan=3, pady=20)
 
     def select_input_file(self):
         self.input_file = filedialog.askopenfilename()
         if self.input_file:
-            print(f"Selected input file: {self.input_file}")
+            self.input_file_label.config(text=self.input_file)  # Update the label to show the selected file
 
     def select_output_file(self):
         self.output_file = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel Files", "*.xlsx")])
         if self.output_file:
-            print(f"Selected output file: {self.output_file}")
+            self.output_file_label.config(text=self.output_file)  # Update the label to show the selected output path
 
     def start_ocr_process(self):
         if not self.input_file or not self.output_file:
