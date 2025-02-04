@@ -6,6 +6,17 @@ pip install img2table[paddle]
 ```
 
 ## Screenshots
+**Main Screen:**<br>
+![Main Screen with loading](https://github.com/SasArth/img2xlsx/blob/main/Screenshots/MainScreen2.png)
+
+---
+**File Selecion:**<br>
+![File Selection](https://github.com/SasArth/img2xlsx/blob/main/Screenshots/FileSelectTab.png)
+
+---
+**Finish/Success:**<br>
+![Finish Screen](https://github.com/SasArth/img2xlsx/blob/main/Screenshots/FinishScreen.png)
+
 
 
 ## What it does:
